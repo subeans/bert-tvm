@@ -69,3 +69,6 @@ res = timer(lambda: model(inputs_nd, token_types_nd, valid_length_nd).wait_to_re
             min_repeat_ms=1000)
 print(f"MXNet latency for batch {batch} and seq length {seq_length}: {np.mean(res):.2f} ms")
 
+# export BERT model 
+model.export("bert",epoch=1)
+print("export bert model - json file & params file ")
